@@ -2,36 +2,62 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
                 "iam:CreateInstanceProfile",
-                "autoscaling:DescribeLaunchConfigurations",
+                "iam:DeleteInstanceProfile",
+                "iam:GetRole",
+                "iam:GetInstanceProfile",
                 "iam:RemoveRoleFromInstanceProfile",
                 "iam:CreateRole",
+                "iam:DeleteRole",
                 "iam:AttachRolePolicy",
                 "iam:PutRolePolicy",
+                "iam:ListInstanceProfiles",
                 "iam:AddRoleToInstanceProfile",
                 "iam:ListInstanceProfilesForRole",
                 "iam:PassRole",
                 "iam:DetachRolePolicy",
-                "autoscaling:DescribeScalingActivities",
-                "autoscaling:DescribeAutoScalingGroups",
                 "iam:DeleteRolePolicy",
-                "autoscaling:UpdateAutoScalingGroup",
-                "iam:DeleteInstanceProfile",
-                "iam:GetRole",
-                "iam:GetInstanceProfile",
-                "cloudformation:*",
-                "iam:DeleteRole",
-                "iam:ListInstanceProfiles",
+                "iam:GetRolePolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "eks:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:DescribeAutoScalingGroups",
+                "autoscaling:DescribeLaunchConfigurations",
+                "autoscaling:DescribeScalingActivities",
                 "autoscaling:CreateLaunchConfiguration",
                 "autoscaling:DeleteLaunchConfiguration",
-                "ec2:*",
+                "autoscaling:UpdateAutoScalingGroup",
                 "autoscaling:DeleteAutoScalingGroup",
-                "eks:*",
-                "autoscaling:CreateAutoScalingGroup",
-                "iam:GetRolePolicy"
+                "autoscaling:CreateAutoScalingGroup"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:DeleteInternetGateway",
+            "Resource": "arn:aws:ec2:*:*:internet-gateway/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*"
             ],
             "Resource": "*"
         }
