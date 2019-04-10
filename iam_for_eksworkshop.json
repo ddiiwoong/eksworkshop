@@ -6,6 +6,7 @@
             "Action": [
                 "iam:CreateInstanceProfile",
                 "iam:DeleteInstanceProfile",
+                "iam:CreateServiceLinkedRole",
                 "iam:GetRole",
                 "iam:GetInstanceProfile",
                 "iam:RemoveRoleFromInstanceProfile",
